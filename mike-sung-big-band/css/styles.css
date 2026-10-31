@@ -230,15 +230,15 @@
   .gig-buttons { display: flex; flex-wrap: wrap; gap: 0.9rem; }
   .gig-buttons .btn-ghost { color: var(--accent-text); border-color: color-mix(in srgb, var(--brass) 50%, var(--border)); }
   .gig-buttons .btn-ghost:hover { border-color: var(--brass); color: var(--accent-text); }
-  .gig-none {
-    border: 1px solid var(--border); border-radius: var(--radius);
-    background: var(--surface); box-shadow: 0 30px 60px -34px rgba(3,13,26,0.5);
-    padding: clamp(2.6rem, 7vw, 4.5rem) clamp(1.6rem, 5vw, 3rem); text-align: center;
+  .gig-poster-feature {
+    display: flex; justify-content: center;
   }
-  .gig-none p {
-    font-family: "Anton", sans-serif; text-transform: uppercase; letter-spacing: 0.02em;
-    font-size: clamp(1.5rem, 4vw, 2.6rem); line-height: 1.15; color: var(--text); margin: 0;
+  .gig-poster-feature img {
+    display: block; width: 100%; max-width: 520px; height: auto;
+    border-radius: var(--radius); border: 1px solid var(--border);
+    box-shadow: 0 30px 60px -30px rgba(3,13,26,0.55); transition: transform 0.35s var(--ease);
   }
+  .gig-poster-feature img:hover { transform: translateY(-4px); }
 
   /* MUSICIANS */
   .band-note { margin-bottom: 2.4rem; font-size: 0.92rem; color: var(--text-soft); letter-spacing: 0.12em; text-transform: uppercase; font-weight: 600; }
@@ -334,6 +334,20 @@
   .audition-card p { color: var(--text-soft); font-size: 1.08rem; }
   .audition-card p + p { margin-top: 1rem; }
   .audition-card p strong { color: var(--text); font-weight: 700; }
+  .audition-card a { color: var(--accent-text); font-weight: 600; text-decoration: underline; text-underline-offset: 2px; }
+  .audition-card a:hover { color: var(--brass); }
+  .audition-open { margin-bottom: 1.3rem; }
+  .audition-open strong { font-size: 1.14rem; }
+  .audition-steps { margin: 0 0 1.4rem; padding-left: 1.4rem; color: var(--text-soft); font-size: 1.08rem; }
+  .audition-steps li { padding: 0.3rem 0; }
+  .audition-steps li::marker { color: var(--accent-text); font-weight: 700; }
+  .audition-note { font-size: 0.98rem; }
+  .audition-dates { margin-top: 1.7rem; padding-top: 1.4rem; border-top: 1px solid var(--border); }
+  .audition-dates ul { list-style: none; margin: 0.9rem 0 0; padding: 0; }
+  .audition-dates li { display: flex; gap: 1rem; align-items: baseline; padding: 0.6rem 0; border-bottom: 1px solid var(--border); }
+  .audition-dates li:last-child { border-bottom: 0; }
+  .audition-dates .d { flex: none; width: 7rem; font-weight: 700; color: var(--text); font-variant-numeric: tabular-nums; }
+  .audition-dates .e { color: var(--text-soft); }
 
   /* ============ PREMIUM POLISH (colours + motion) ============ */
   :root { --brass-grad: linear-gradient(135deg, #e9cd86 0%, #c8a256 48%, #a8792d 100%); }
